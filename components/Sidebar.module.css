@@ -1,0 +1,153 @@
+.sidebar {
+  flex: 4;
+  height: 100vh;
+}
+
+.sidebarFriendImg {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  /* 比率を調整する */
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.sidebarWrapper {
+  padding: 20px;
+}
+
+.sidebarList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebarListItem {
+  margin-bottom: 10px;
+  display: flex; /* 文字とアイコンのズレを修正 */
+  align-items: center;
+  padding: 4px 6px;
+  cursor: pointer;
+  box-shadow: 1px 5px 16px -12px #39608d;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.sidebarListItem:hover {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+
+.sidebarIcon {
+  font-size: 35px !important;
+  margin-right: 10px;
+}
+
+.sidebarListItemText {
+  font-size: 20px;
+  padding-top: 3px;
+}
+
+.sidebarHr {
+  margin: 20px 0;
+}
+
+.sidebarFriendList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebarFriend {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.include-accordion {
+  background-color: #35924a;
+  width: 150px;
+  padding: 0;
+  color: #fff;
+  float: left;
+  margin-left: 30px;
+}
+.sidebarListItem {
+  list-style: none;
+}
+.include-accordion-accordion {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  border-top: 1px solid #67a863;
+  background-color: #5eaa6c;
+  margin: 0;
+}
+.sidebarListItemIn {
+  border-bottom: 1px dotted #7fbf8b;
+  padding: 10px 0 10px 10px;
+  margin-left: 15px;
+}
+.lastchild {
+  border-bottom: 1px solid #67a863;
+}
+.accordionBtn {
+  position: relative;
+  border: none;
+  width: 100%;
+  background-color: inherit;
+  color: #fff;
+  cursor: pointer;
+  text-align: left;
+  padding: 15px 0 15px 20px;
+  font-size: 1em;
+}
+.accordionBtn:hover {
+  background-color: #1a5b27;
+}
+.accordionBtn::before,
+.accordionBtn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 1.5px;
+  height: 8px;
+  background-color: #fff;
+  transition: 0.5s;
+}
+.accordionBtn::before {
+  transform: translateY(-50%) rotate(-45deg);
+  right: 35px;
+}
+.accordionBtn::after {
+  transform: translateY(-50%) rotate(45deg);
+  right: 30px;
+}
+.sidebarListItem.active .sidebarListItemIn.active .accordionBtn::before {
+  transform: translateY(-50%) rotate(-135deg);
+  transition: 0.5s;
+}
+.sidebarListItem.active .sidebarListItemIn.active .accordionBtn::after {
+  transform: translateY(-50%) rotate(135deg);
+  transition: 0.5s;
+}
+/* ul:nth-of-type(2) {
+  background-color: #357d87;
+}
+ul:nth-of-type(2) ul {
+  background-color: #519fa5;
+  border-top: 1px solid #5d9fa8;
+}
+ul:nth-of-type(2) button:hover {
+  background-color: #1c4b56;
+}
+ul:nth-of-type(2) li li {
+  border-bottom: 1px dotted #73bebf;
+}
+ul:nth-of-type(2) li.active li:last-child {
+  border-bottom: 1px solid #5d9fa8;
+} */
+.include-accordion.active .include-accordion-accordion.active {
+  overflow-y: auto;
+}
