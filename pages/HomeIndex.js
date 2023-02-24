@@ -1,14 +1,13 @@
 import utilsStyles from "../styles/utils.module.css";
 import { useState } from "react";
 import OnsenList from "../components/OnsenList";
-import Allpage from "../components/AllPage";
+import Link from "next/link";
+import styles from "../styles/Home.module.css";
 
 
 export default function HomeIndex({ allPostsData }) {
   const [titleQuery, setTitleSetQuery] = useState("");
   const [subQuery, setSubQuery] = useState("");
-
-  const copyObj = Object.assign({}, allPostsData);
 
   const items = ["タイトル内容で探す", "記事内容で探す"];
 
@@ -69,9 +68,7 @@ export default function HomeIndex({ allPostsData }) {
                 titleSearch={titleQuery}
                 subSearch={subQuery}
               />
-              <Allpage
-                allPostsData={allPostsData}
-              />
+              
             </div>
           </div>
           <style jsx>

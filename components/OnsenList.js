@@ -18,7 +18,7 @@ const OnsenList = ({ allPostsData, titleSearch, subSearch }) => {
 
   return (
     <section className={utilsStyles.headingMd}>
-      <h2>🔍検索結果</h2>
+      {titleQuery == "" && subQuery == "" ?  <div></div> :<h2>🔍検索結果</h2>}
       <div className={styles.grid}>
         {subSearch == ""
           ? titleQuery.map(({ id, date, title, thumbnail }) => {
