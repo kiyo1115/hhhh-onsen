@@ -27,8 +27,6 @@ function TopLayout({ children, home }) {
         )}
       </header>
 
-
-
       <main>{children}</main>
       {!home && (
         <div>

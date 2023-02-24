@@ -1,6 +1,8 @@
 import utilsStyles from "../styles/utils.module.css";
 import { useState } from "react";
 import OnsenList from "../components/OnsenList";
+import Allpage from "../components/AllPage";
+
 
 export default function HomeIndex({ allPostsData }) {
   const [titleQuery, setTitleSetQuery] = useState("");
@@ -66,6 +68,9 @@ export default function HomeIndex({ allPostsData }) {
                 allPostsData={allPostsData}
                 titleSearch={titleQuery}
                 subSearch={subQuery}
+              />
+              <Allpage
+                allPostsData={allPostsData}
               />
             </div>
           </div>
