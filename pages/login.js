@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import AppContext from "../context/AppContext";
 import { login } from "../lib/auth";
 import Link from "next/link";
+import TopIndex from "../components/TopIndex";
 
 const Login = () => {
   // const appContext = useContext(AppContext);
@@ -16,74 +17,76 @@ const Login = () => {
   // };
 
   return (
-    <div>
+    <TopIndex>
       <div>
         <div>
-          <div className="paper">
-            <div className="header">
-              <h2>ログイン</h2>
+          <div>
+            <div className="paper">
+              <div className="header">
+                <h2>ログイン</h2>
+              </div>
             </div>
+            <section className="wrapper">
+              <form>
+                <fieldset>
+                  <div>
+                    <label>メールアドレス：</label>
+                    <input
+                      type="email"
+                      name="identifier"
+                      style={{ height: 50, fontSize: "1.2rem" }}
+                      onChange={(e) => {
+                        handleChange(e);
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <label>パスワード：</label>
+                    <input
+                      type="password"
+                      name="password"
+                      style={{ height: 50, fontSize: "1.2rem" }}
+                      onChange={(e) => {
+                        handleChange(e);
+                      }}
+                    />
+                  </div>
+                  <span>
+                    <Link href="/">
+                      <small>パスワードをお忘れですか？</small>
+                    </Link>
+                  </span>
+                  <button
+                    style={{ float: "right", width: 120 }}
+                    color="primary"
+                    onClick={() => {
+                      handleLogin();
+                    }}
+                  >
+                    ログイン
+                  </button>
+                </fieldset>
+              </form>
+            </section>
           </div>
-          <section className="wrapper">
-            <form>
-              <fieldset>
-                <div>
-                  <label>メールアドレス：</label>
-                  <input
-                    type="email"
-                    name="identifier"
-                    style={{ height: 50, fontSize: "1.2rem" }}
-                    onChange={(e) => {
-                      handleChange(e);
-                    }}
-                  />
-                </div>
-                <div>
-                  <label>パスワード：</label>
-                  <input
-                    type="password"
-                    name="password"
-                    style={{ height: 50, fontSize: "1.2rem" }}
-                    onChange={(e) => {
-                      handleChange(e);
-                    }}
-                  />
-                </div>
-                <span>
-                  <Link href="/">
-                    <small>パスワードをお忘れですか？</small>
-                  </Link>
-                </span>
-                <button
-                  style={{ float: "right", width: 120 }}
-                  color="primary"
-                  onClick={() => {
-                    handleLogin();
-                  }}
-                >
-                  ログイン
-                </button>
-              </fieldset>
-            </form>
-          </section>
         </div>
+        <style jsx>
+          {`
+            .paper {
+              text-align: center;
+              margin-top: 50px;
+            }
+            .header {
+              width: 100%;
+              margin-bottom: 30px;
+            }
+            .wrapper {
+              padding: 10px 30px 20px 30px;
+            }
+          `}
+        </style>
       </div>
-      <style jsx>
-        {`
-          .paper {
-            text-align: center;
-            margin-top: 50px;
-          }
-          .header {
-            width: 100%;
-            margin-bottom: 30px;
-          }
-          .wrapper {
-            padding: 10px 30px 20px 30px;
-          }
-        `}
-      </style>
-    </div>
+    </TopIndex>
   );
 };
 

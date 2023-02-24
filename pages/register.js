@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import TopIndex from "../components/TopIndex";
 import AppContext from "../context/AppContext";
 import { registerUser } from "../lib/auth";
 
@@ -18,6 +19,7 @@ const register = () => {
 
 
   return (
+    <TopIndex>
     <div>
       <div>
         <div>
@@ -95,6 +97,7 @@ const register = () => {
         `}
       </style>
     </div>
+    </TopIndex>
   );
 };
 

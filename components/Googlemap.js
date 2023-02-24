@@ -24,7 +24,7 @@ const positionIwamotocho = {
 const markerLabelAkiba = {
   color: "white",
   fontFamily: "sans-serif",
-  fontSize: "15px",
+  fontSize: "14px",
   fontWeight: "100",
   text: "5",
 };
@@ -32,9 +32,9 @@ const markerLabelAkiba = {
 const markerLabelIwamotocho = {
   color: "white",
   fontFamily: "sans-serif",
-  fontSize: "15px",
+  fontSize: "14px",
   fontWeight: "100",
-  text: "12",
+  text: "600",
 };
 
 const MyComponent = () => {
