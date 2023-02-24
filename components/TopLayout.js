@@ -3,7 +3,7 @@ import styles from "./Layout.module.css";
 import utilsStyles from "../styles/utils.module.css";
 import Link from "next/link";
 
-const name = "温泉スポット検索";
+const name = "🔍温泉スポット検索";
 export const siteTitle = "温泉ブログ";
 
 function TopLayout({ children, home }) {

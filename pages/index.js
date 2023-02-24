@@ -34,12 +34,12 @@ export default function Home({ allPostsData }) {
       <div style={{ display: "flex" }}>
         <Sidebar />
         <TopLayout home>
-        <Head>
+          <Head>
             <title>{siteTitle}</title>
           </Head>
           <HomeIndex allPostsData={allPostsData} />
         </TopLayout>
-        <Rightbar/>
+        <Rightbar />
       </div>
     </TopIndex>
   );

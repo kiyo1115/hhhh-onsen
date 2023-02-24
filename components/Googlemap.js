@@ -1,3 +1,4 @@
+
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 const containerStyle = {
@@ -38,8 +39,8 @@ const markerLabelIwamotocho = {
 
 const MyComponent = () => {
   return (
-    <LoadScript googleMapsApiKey="API Key">
-      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={17}>
+    <LoadScript googleMapsApiKey={process.env.NEXT_PUBLIC_MAP_TOKEN}>
+      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
         <Marker position={positionAkiba} label={markerLabelAkiba} />
         <Marker position={positionIwamotocho} label={markerLabelIwamotocho} />
       </GoogleMap>

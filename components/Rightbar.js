@@ -13,14 +13,6 @@ export default function Rightbar() {
         </span>
       </div>
     <GoogleMap/>
-
-      {/* <img src="/images/event.jpeg" alt="" className={styles.eventImg} /> */}
-      {/* <h4 className="rightbarTitle">オンラインの友達</h4> */}
-      {/* <ul className="rightbarFriendList">
-          {Users.map((user) => {
-            return <Online user={user} key={user.id} />;
-          })}
-        </ul> */}
       <p className={styles.promotionTitle}>プロモーション広告</p>
       <img
         src="/images/promotion/promotion1.jpeg"
