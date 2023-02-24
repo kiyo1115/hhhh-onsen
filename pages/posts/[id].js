@@ -41,6 +41,7 @@ export default function Post({ postData }) {
           </Head>
           <article>
             <h1 className={utilStyle.headingX1}>{postData.title}</h1>
+            <img src ={postData.thumbnail}/>
             <div className={utilStyle.lightText}>{postData.date}</div>
             <div
               dangerouslySetInnerHTML={{ __html: postData.blogContentHTML }}

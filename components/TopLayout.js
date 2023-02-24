@@ -16,12 +16,12 @@ function TopLayout({ children, home }) {
       <header className={styles.header}>
         {home ? (
           <>
-            <img src="/images/profile.png" className={`${utilsStyles.borderCircle} ${styles.headerHomeImage}`}/>
+            <img src="/images/profile.png" className={`${utilsStyles.borderCircle} alt="" ${styles.headerHomeImage}`}/>
             <h1 className={utilsStyles.heading2X1}>{name}</h1>
           </>
         ) : (
           <>
-            <img src="/images/profile.png" className={`${utilsStyles.borderCircle}`}/>
+            <img src="/images/profile.png" className={`${utilsStyles.borderCircle}`} alt=""/>
             <h1 className={utilsStyles.heading2X1}>{name}</h1>
           </>
         )}
