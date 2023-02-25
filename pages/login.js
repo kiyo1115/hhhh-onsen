@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import AppContext from "../context/AppContext";
+import { AuthContext } from "../state/AuthContext";
 import { login } from "../lib/auth";
 import Link from "next/link";
 import TopIndex from "../components/TopIndex";

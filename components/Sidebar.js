@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 // import {
 //   Search,
 //   Home,
@@ -10,6 +10,8 @@ import React, { useState } from "react";
 // } from "@mui/icons-material";
 import "./Sidebar.module.css";
 import Link from "next/link";
+import { searchCall } from "../apiCalls";
+import { AuthContext } from "../state/AuthContext";
 
 // import CloseFriend from "../closeFriend/CloseFriend";
 // import { Users } from "../../dummyData";
@@ -31,6 +33,24 @@ import Link from "next/link";
 //今回はapp.jsに定義をしている為、利用可能
 
 export default function Sidebar() {
+  const { user, search, isFetchingUser, errorUser, dispatch } =
+    useContext(AuthContext); //AuthContext.providerのvalueで宣言している値を取得できる
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); //リロードをしないようにするイベントハンドラー
+
+    // console.log(email.current.value)
+    // console.log(password.current.value)
+    searchCall(
+      //第一引数にはオブジェクトとして値を渡す
+      {
+        search: e.target.innerText,
+      },
+      //第二引数にはdispatch自体の関数を渡す
+      dispatch
+    );
+  };
+
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
   const [isOpen3, setIsOpen3] = useState(false);
@@ -58,7 +78,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            北海道
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              北海道
+            </button>
           </Link>
         </div>
 
@@ -77,7 +103,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen2}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            青森県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              青森県
+            </button>
           </Link>
         </div>
         <div
@@ -86,7 +118,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen2}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            岩手県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              岩手県
+            </button>
           </Link>
         </div>
         <div
@@ -95,7 +133,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen2}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            宮城県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              宮城県
+            </button>
           </Link>
         </div>
         <div
@@ -104,7 +148,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen2}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            秋田県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              秋田県
+            </button>
           </Link>
         </div>
         <div
@@ -113,7 +163,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen2}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            山形県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              山形県
+            </button>
           </Link>
         </div>
         <div
@@ -122,7 +178,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen2}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            福島県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              福島県
+            </button>
           </Link>
         </div>
 
@@ -141,7 +203,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen3}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            茨城県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              茨城県
+            </button>
           </Link>
         </div>
         <div
@@ -150,7 +218,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen3}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            栃木県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              栃木県
+            </button>
           </Link>
         </div>
         <div
@@ -159,7 +233,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen3}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            群馬県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              群馬県
+            </button>
           </Link>
         </div>
         <div
@@ -168,7 +248,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen3}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            埼玉県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              埼玉県
+            </button>
           </Link>
         </div>
         <div
@@ -177,7 +263,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen3}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            千葉県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              千葉県
+            </button>
           </Link>
         </div>
         <div
@@ -186,7 +278,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen3}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            東京都
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              東京都
+            </button>
           </Link>
         </div>
         <div
@@ -195,7 +293,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen3}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            神奈川県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              神奈川県
+            </button>
           </Link>
         </div>
 
@@ -214,7 +318,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen4}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            新潟県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              新潟県
+            </button>
           </Link>
         </div>
         <div
@@ -223,7 +333,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen4}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            富山県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              富山県
+            </button>
           </Link>
         </div>
         <div
@@ -232,7 +348,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen4}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            石川県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              石川県
+            </button>
           </Link>
         </div>
         <div
@@ -241,7 +363,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen4}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            福井県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              福井県
+            </button>
           </Link>
         </div>
         <div
@@ -250,7 +378,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen4}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            山梨県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              山梨県
+            </button>
           </Link>
         </div>
         <div
@@ -259,7 +393,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen4}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            長野県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              長野県
+            </button>
           </Link>
         </div>
         <div
@@ -268,7 +408,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen4}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            岐阜県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              岐阜県
+            </button>
           </Link>
         </div>
         <div
@@ -277,7 +423,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen4}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            静岡県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              静岡県
+            </button>
           </Link>
         </div>
         <div
@@ -286,7 +438,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen4}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            愛知県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              愛知県
+            </button>
           </Link>
         </div>
 
@@ -305,7 +463,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen5}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            三重県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              三重県
+            </button>
           </Link>
         </div>
         <div
@@ -314,7 +478,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen5}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            滋賀県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              滋賀県
+            </button>
           </Link>
         </div>
         <div
@@ -323,7 +493,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen5}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            京都府
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              京都府
+            </button>
           </Link>
         </div>
         <div
@@ -332,7 +508,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen5}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            大阪府
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              大阪府
+            </button>
           </Link>
         </div>
         <div
@@ -341,7 +523,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen5}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            兵庫県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              兵庫県
+            </button>
           </Link>
         </div>
         <div
@@ -350,7 +538,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen5}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            奈良県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              奈良県
+            </button>
           </Link>
         </div>
         <div
@@ -359,7 +553,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen5}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            和歌山県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              和歌山県
+            </button>
           </Link>
         </div>
 
@@ -378,7 +578,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen6}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            鳥取県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              鳥取県
+            </button>
           </Link>
         </div>
         <div
@@ -387,7 +593,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen6}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            島根県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              島根県
+            </button>
           </Link>
         </div>
         <div
@@ -396,7 +608,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen6}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            岡山県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              岡山県
+            </button>
           </Link>
         </div>
         <div
@@ -405,7 +623,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen6}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            広島県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              広島県
+            </button>
           </Link>
         </div>
         <div
@@ -414,7 +638,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen6}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            山口県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              山口県
+            </button>
           </Link>
         </div>
 
@@ -433,7 +663,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen7}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            徳島県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              徳島県
+            </button>
           </Link>
         </div>
         <div
@@ -442,7 +678,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen7}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            香川県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              香川県
+            </button>
           </Link>
         </div>
         <div
@@ -451,7 +693,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen7}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            愛媛県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              愛媛県
+            </button>
           </Link>
         </div>
         <div
@@ -460,7 +708,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen7}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            高知県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              高知県
+            </button>
           </Link>
         </div>
 
@@ -479,7 +733,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen8}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            福岡県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              福岡県
+            </button>
           </Link>
         </div>
         <div
@@ -488,7 +748,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen8}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            佐賀県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              佐賀県
+            </button>
           </Link>
         </div>
         <div
@@ -497,7 +763,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen8}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            長崎県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              長崎県
+            </button>
           </Link>
         </div>
         <div
@@ -506,7 +778,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen8}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            熊本県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              熊本県
+            </button>
           </Link>
         </div>
         <div
@@ -515,7 +793,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen8}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            大分県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              大分県
+            </button>
           </Link>
         </div>
         <div
@@ -524,7 +808,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen8}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            宮崎県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              宮崎県
+            </button>
           </Link>
         </div>
         <div
@@ -533,7 +823,13 @@ export default function Sidebar() {
           aria-hidden={!isOpen8}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            鹿児島県
+            <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >
+              鹿児島県
+            </button>
           </Link>
         </div>
         <div
@@ -542,7 +838,11 @@ export default function Sidebar() {
           aria-hidden={!isOpen8}
         >
           <Link href="/" style={{ textDecoration: "none", color: "black" }}>
-            沖縄県
+          <button
+              className="sidebarListItemText accordionBtn"
+              type="button"
+              onClick={(e) => handleSubmit(e)}
+            >沖縄県</button>
           </Link>
         </div>
 

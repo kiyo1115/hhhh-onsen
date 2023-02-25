@@ -36,7 +36,9 @@ const OnsenList = ({ allPostsData, titleSearch, subSearch }) => {
                   </Link>
                   <br />
                   <small className={styles.lightText}>{date}</small>
+                  <hr />
                 </article>
+                
               );
             })
           : subQuery.map(({ id, date, title, thumbnail }) => (
@@ -53,6 +55,8 @@ const OnsenList = ({ allPostsData, titleSearch, subSearch }) => {
                 </Link>
                 <br />
                 <small className={styles.lightText}>{date}</small>
+                <hr />
+
               </article>
             ))}
       </div>

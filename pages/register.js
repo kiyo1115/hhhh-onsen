@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import TopIndex from "../components/TopIndex";
-import AppContext from "../context/AppContext";
+import { AuthContext } from "../state/AuthContext";
 import { registerUser } from "../lib/auth";
 
 

@@ -8,8 +8,8 @@ import HomeIndex from "./HomeIndex";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import utilsStyles from "../styles/utils.module.css";
-
-
+import { AuthContext } from "../state/AuthContext";
+import { useContext } from "react";
 
 //SSGの場合
 export async function getStaticProps() {
@@ -24,7 +24,10 @@ export async function getStaticProps() {
   };
 }
 
+
 export default function Home({ allPostsData }) {
+  const authContext = useContext(AuthContext);
+  // console.log(authContext.search)
   return (
     <TopIndex>
       <div style={{ display: "flex" }}>
@@ -34,27 +37,29 @@ export default function Home({ allPostsData }) {
             <title>{siteTitle}</title>
           </Head>
           <HomeIndex allPostsData={allPostsData} />
-          <h2 className={utilsStyles.headingMd}>記事一覧</h2> 
-          <div className={styles.grid}>
-            {allPostsData.map(({ id, date, title, thumbnail }) => {
-              return (
-                <article key={id}>
-                  <Link href={`/posts/${id}`}>
-                    <img
-                      src={thumbnail}
-                      className={styles.thumbnailImage}
-                      alt=""
-                    />
-                  </Link>
-                  <Link href={`/posts/${id}`} className={styles.boldText}>
-                    {title}
-                  </Link>
-                  <br />
-                  <small className={styles.lightText}>{date}</small>
-                </article>
-              );
-            })}
-          </div>
+          <section className={utilsStyles.headingMd}>
+            <h2>✍記事一覧</h2>
+            <div className={styles.grid}>
+              {allPostsData.map(({ id, date, title, thumbnail }) => {
+                return (
+                  <article key={id}>
+                    <Link href={`/posts/${id}`}>
+                      <img
+                        src={thumbnail}
+                        className={styles.thumbnailImage}
+                        alt=""
+                      />
+                    </Link>
+                    <Link href={`/posts/${id}`} className={styles.boldText}>
+                      {title}
+                    </Link>
+                    <br />
+                    <small className={styles.lightText}>{date}</small>
+                  </article>
+                );
+              })}
+            </div>
+          </section>
         </TopLayout>
         <Rightbar />
       </div>
