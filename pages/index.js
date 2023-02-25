@@ -24,10 +24,18 @@ export async function getStaticProps() {
   };
 }
 
-
 export default function Home({ allPostsData }) {
+  let titleQuery = [];
+
   const authContext = useContext(AuthContext);
-  // console.log(authContext.search)
+
+  if (authContext.search != "") {
+    titleQuery = allPostsData.filter((spot) =>
+      spot.sub.includes(authContext.search)
+    );
+  }
+
+
   return (
     <TopIndex>
       <div style={{ display: "flex" }}>
@@ -38,9 +46,10 @@ export default function Home({ allPostsData }) {
           </Head>
           <HomeIndex allPostsData={allPostsData} />
           <section className={utilsStyles.headingMd}>
-            <h2>✍記事一覧</h2>
+          <h2>✍記事一覧</h2>
             <div className={styles.grid}>
-              {allPostsData.map(({ id, date, title, thumbnail }) => {
+              {authContext.search == null ?
+              (allPostsData.map(({ id, date, title, thumbnail }) => {
                 return (
                   <article key={id}>
                     <Link href={`/posts/${id}`}>
@@ -57,7 +66,25 @@ export default function Home({ allPostsData }) {
                     <small className={styles.lightText}>{date}</small>
                   </article>
                 );
-              })}
+              })):
+              (titleQuery.map(({ id, date, title, thumbnail }) => {
+                return (
+                  <article key={id}>
+                    <Link href={`/posts/${id}`}>
+                      <img
+                        src={thumbnail}
+                        className={styles.thumbnailImage}
+                        alt=""
+                      />
+                    </Link>
+                    <Link href={`/posts/${id}`} className={styles.boldText}>
+                      {title}
+                    </Link>
+                    <br />
+                    <small className={styles.lightText}>{date}</small>
+                  </article>
+                );
+              }))}
             </div>
           </section>
         </TopLayout>

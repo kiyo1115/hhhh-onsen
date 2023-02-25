@@ -43,9 +43,9 @@ export default function Sidebar() {
     // console.log(password.current.value)
     searchCall(
       //第一引数にはオブジェクトとして値を渡す
-      {
-        search: e.target.innerText,
-      },
+      
+        e.target.innerText
+      ,
       //第二引数にはdispatch自体の関数を渡す
       dispatch
     );
