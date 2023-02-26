@@ -9,7 +9,7 @@ export default function Rightbar() {
       <div className={styles.eventContainer}>
         <img src="/images/star.png" alt="" className={styles.starImg} />
         <span className={styles.eventText}>
-          <b>フォロワー限定</b>イベント開催中！
+          一時間あたり<b>1000回限定</b>で表示中！
         </span>
       </div>
     <GoogleMap/>
@@ -31,7 +31,7 @@ export default function Rightbar() {
         alt=""
         className={styles.rightbarPromotionImg}
       />
-      <p className="promotionName">lewisfeet株式会社</p>
+      <p className="promotionName">○○株式会社</p>
     </div>
   );
 }
