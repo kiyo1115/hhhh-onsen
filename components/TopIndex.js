@@ -31,7 +31,7 @@ function TopIndex({ children }) {
                 <div
                   className="nav-link"
                   onClick={() => {
-                    user(null);
+                    // user(null);
                     //グローバルで指定している変数setUserを使って
                     //user定数をnullに変更している
                   }}

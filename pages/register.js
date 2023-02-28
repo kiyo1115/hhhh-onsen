@@ -28,7 +28,7 @@ const Register = () => {
           password: pass,
         };
         await axios.post("/auth/register", user);
-        window.location.href = "/";
+        // window.location.href = "/";
       } catch (err) {
         console.log(err);
       }
