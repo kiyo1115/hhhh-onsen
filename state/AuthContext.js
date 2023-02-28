@@ -5,18 +5,15 @@ import AuthReducer from "./AuthReducer";
 const initialState = {
   user: null,
   // JSON.parse(localStorage.getItem("user"))  ||
-  search: null,
   // user: {
-  //   _id: "63c4c2f1de0e642efbd3ee23",
+  //   _id: "63fd4a29b4fe240204ddec63",
   //   username: "kiyosato",
-  //   email: "email3@gmail.com",
-  //   password: "password2",
-  //   profilePicture: "/assets/person/4.jpeg",
-  //   coverPicture: "",
-  //   followers: [],
-  //   followings: [],
+  //   email: "kiyo@gmail.com",
+  //   password: "kiyosato",
+  //   profilePicture: "",
   //   isAdmin: false,
   // },
+  search: null,
   isFetching: false, //データを取ってこれたかどうか
   error: false,
 };

@@ -2,9 +2,12 @@ import Head from "next/head";
 import styles from "./Layout.module.css";
 import utilsStyles from "../styles/utils.module.css";
 import Link from "next/link";
-
+import { useContext } from "react";
+import { AuthContext } from "../state/AuthContext";
 
 function TopIndex({ children }) {
+  const { user, search, isFetchingUser, errorUser, dispatch } =
+    useContext(AuthContext);
   return (
     <div>
       <Head>
@@ -18,12 +21,12 @@ function TopIndex({ children }) {
           <div>
             <Link href="/">
               {/* <a className="navbar-brand">ホーム</a>
-             */}
-             <span className="">ホーム</span>
+               */}
+              <span className="">ホーム</span>
             </Link>
           </div>
           <div className="ml-auto">
-            {/* {user ? (
+            {user ? (
               <Link href="/">
                 <a
                   className="nav-link"
@@ -36,24 +39,22 @@ function TopIndex({ children }) {
                   ログアウト
                 </a>
               </Link>
-            ) : */}
-             {/* ( */}
+            ) : (
               <Link href="/login">
                 {/* <a className="nav-link">ログイン</a> */}
                 <span className="">ログイン</span>
               </Link>
-            {/* )} */}
+            )}
           </div>
           <div>
-            {/* {user ? (
+            {user ? (
               <h5 style={{ marginTop: "5px" }}>{user.username}</h5>
-            ) :  */}
-            {/* ( */}
+            ) : (
               <Link href="/register">
                 {/* <a className="nav-link">新規登録</a> */}
                 <span className="">新規登録</span>
               </Link>
-            {/* )} */}
+            )}
           </div>
         </div>
         <style jsx>
@@ -72,8 +73,6 @@ function TopIndex({ children }) {
         </style>
       </header>
       <main>{children}</main>
-
-
     </div>
   );
 }
