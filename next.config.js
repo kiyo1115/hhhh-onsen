@@ -1,17 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-};
 
-module.exports = nextConfig;
-
-module.exports = {
   async rewrites() {
     const exist =
-      // "http://localhost:5000/api/auth/login" ||
-      "https://hhhh-onsen.vercel.app/api/auth/login";
+      // "http://localhost:5000/api/auth/login" 
+      //  || 
+       "https://hhhh-onsen.vercel.app/api/auth/login";
     const exist2 =
-      // "http://localhost:5000/api/auth/register" ||
+      // "http://localhost:5000/api/auth/register" 
+      // || 
       "https://hhhh-onsen.vercel.app/api/auth/register";
 
     return [
@@ -36,3 +34,6 @@ module.exports = {
     ];
   },
 };
+
+module.exports = nextConfig;
+
