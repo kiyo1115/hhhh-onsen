@@ -28,16 +28,16 @@ function TopIndex({ children }) {
           <div className="ml-auto">
             {user ? (
               <Link href="/">
-                <a
+                <div
                   className="nav-link"
                   onClick={() => {
-                    setUser(null);
+                    user(null);
                     //グローバルで指定している変数setUserを使って
                     //user定数をnullに変更している
                   }}
                 >
                   ログアウト
-                </a>
+                </div>
               </Link>
             ) : (
               <Link href="/login">
