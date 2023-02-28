@@ -38,7 +38,7 @@ const register = () => {
                       name="username"
                       style={{ height: 50, fontSize: "1.2rem" }}
                       required
-                      minLength="2"
+                      minLength="3"
                       onChange={(e) => {
                         // handleChange(e);
                       }}
