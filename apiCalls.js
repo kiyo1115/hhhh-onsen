@@ -5,7 +5,7 @@ export const loginCall = async (user, dispatch) => {
   try {    
     //データベースと通信できたら第一引数のaxios経由でURL/loginを開き
     //第二引数（user）にはバックエンドの(req.body)に代入され、{emailとpassword}が入る
-    const res = await axios.post("/auth/login", user);
+    const res = await axios.post("/api/auth/login", user);
 
     dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
     // window.location.href = "/";
