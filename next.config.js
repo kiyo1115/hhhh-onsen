@@ -15,13 +15,13 @@ const nextConfig = {
     return [
       {
         source: "/auth/login",
-        // destination: "http://localhost:5000/auth/login"
-        destination: "https://hhhh-onsen.vercel.app/auth/login",
+        destination: "http://localhost:5000/auth/login" || 
+         "https://hhhh-onsen.vercel.app/auth/login",
       },
       {
         source: "/auth/register",
-        // destination: "http://localhost:5000/auth/register"
-        destination: "https://hhhh-onsen.vercel.app/auth/register",
+        destination: "http://localhost:5000/auth/register" ||
+         "https://hhhh-onsen.vercel.app/auth/register",
 
         // Matched parameters can be used in the destination
       },
