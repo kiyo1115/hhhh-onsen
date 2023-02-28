@@ -6,11 +6,11 @@ const nextConfig = {
     const exist =
       // "http://localhost:5000/api/auth/login" 
       //  || 
-       "https://hhhh-onsen.vercel.app/api/auth/login";
+       "https://hhhh-onsen.vercel.app/api/api/auth/login";
     const exist2 =
       // "http://localhost:5000/api/auth/register" 
       // || 
-      "https://hhhh-onsen.vercel.app/api/auth/register";
+      "https://hhhh-onsen.vercel.app/api/api/auth/register";
 
     return [
       {
