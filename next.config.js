@@ -14,7 +14,7 @@ const nextConfig = {
 
     return [
       {
-        source: "/auth/login",
+        source: "/api/auth/login",
         destination: "/api/auth/login"
       },
       {
